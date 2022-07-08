@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import store from "../../store.js";
 
+// Dispatches the selected search ID to the store
 function searchSelector(selected) {
   store.dispatch({
     type: "searchSelected",
@@ -14,6 +15,7 @@ function searchSelector(selected) {
   });
 }
 
+// Generate cards to populate search list, button onclick passes prop to searchSelector functions
 function SearchItem(props) {
   return (
     <li className={classes.item}>
@@ -36,7 +38,5 @@ function SearchItem(props) {
     </li>
   );
 }
-
-// console.log(store.getState());
 
 export default SearchItem;

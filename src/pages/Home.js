@@ -1,20 +1,22 @@
 import SearchList from "../components/searches/SearchList";
 
+// props for the search options used in SearchList
 const SEARCH_OPTIONS = [
   {
     id: "1",
-    title: "Search by industry",
+    title: "Search by Industry",
   },
   {
     id: "2",
-    title: "Search by Twitter handle",
+    title: "Search by Twitter Handle",
   },
   {
     id: "3",
-    title: "Search by hashtag",
+    title: "Search by Hashtag",
   },
 ];
 
+// Title and searchList component
 function HomePage() {
   return (
     <section>

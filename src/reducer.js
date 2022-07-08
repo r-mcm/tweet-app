@@ -1,10 +1,18 @@
 export default function reducer(state = [], action) {
   if (action.type === "searchSelected")
     return [
-      //   ...state,
+      ...state,
       {
         id: action.payload.id,
         description: action.payload.description,
+      },
+    ];
+  else if (action.type === "searchTerm")
+    return [
+      {
+        industry: action.payload.industry,
+        hashtag: action.payload.hashtag,
+        handle: action.payload.handle,
       },
     ];
   return state;

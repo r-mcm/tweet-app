@@ -1,6 +1,7 @@
 import SearchItem from "./SearchItem";
 import classes from "./SearchList.module.css";
 
+// List of search options mapped from the searchItems
 function SearchList(props) {
   return (
     <ul className={classes.list}>
