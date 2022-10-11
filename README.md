@@ -1,4 +1,4 @@
-# Twitter App for scraping tweets and analysing them
+# Twitter App for Scraping and Analysing Tweets
 
 To start:
 
