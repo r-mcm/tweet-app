@@ -1,3 +1,10 @@
+# Twitter App for scraping tweets and analysing them
+
+To start:
+
+- run 'python main.py' to run the flask server
+- run 'npm start'
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
