@@ -7,11 +7,11 @@ export default function reducer(state = [], action) {
         description: action.payload.description,
       },
     ];
-  else if (action.type === "searchTerm")
+  else if (action.type === "searchQuery")
     return [
       {
         industry: action.payload.industry,
-        hashtag: action.payload.term.term,
+        hashtag: action.payload.query.query,
         handle: action.payload.handle,
       },
     ];

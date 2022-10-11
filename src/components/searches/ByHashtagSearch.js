@@ -10,11 +10,11 @@ import React, { useState } from "react";
 // https://linguinecode.com/post/how-to-get-form-data-on-submit-in-reactjs
 // https://www.freecodecamp.org/news/pass-data-between-components-in-react/
 
-function searchTermSelector(term) {
+function searchQuerySelector(query) {
   store.dispatch({
-    type: "searchTerm",
+    type: "searchQuery",
     payload: {
-      term,
+      query,
     },
   });
 }
@@ -22,7 +22,7 @@ function searchTermSelector(term) {
 function ByHashtagSearchPage() {
   console.log(store.getState());
   const initialFormData = Object.freeze({
-    term: "",
+    query: "",
   });
 
   const [formData, updateFormData] = React.useState(initialFormData);
@@ -37,8 +37,9 @@ function ByHashtagSearchPage() {
   };
 
   const handleSubmit = (e) => {
-    searchTermSelector(formData);
+    searchQuerySelector(formData);
     console.log(formData);
+
     // e.preventDefault();
     // ... submit to API or something
   };
@@ -51,7 +52,7 @@ function ByHashtagSearchPage() {
       <div>
         <p>Please enter the hashtag you wish to search, i.e. #innovation </p>
         {/* <input type="text" name="term" /> */}
-        <input name="term" onChange={handleChange} />
+        <input name="query" onChange={handleChange} />
       </div>
       <div className={classes.actions}>
         <Link to="/results">
@@ -68,4 +69,5 @@ function ByHashtagSearchPage() {
   );
 }
 
+export var result;
 export default ByHashtagSearchPage;
