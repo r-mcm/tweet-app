@@ -16,7 +16,7 @@ var requestOptions = {
 };
 
 const AsyncAwait = () => {
-  const [users, setUsers] = useState([]);
+  const [tweetInfo, setTweetInfo] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const fetchData = async () => {
@@ -31,7 +31,9 @@ const AsyncAwait = () => {
       // console.log(results.data[i]);
       arr.push(results.data[i]);
     }
-    setUsers(arr);
+    // pass results from the array to tweetInfo
+    setTweetInfo(arr);
+
     console.log(results);
   };
 
@@ -42,13 +44,22 @@ const AsyncAwait = () => {
   return (
     <div>
       {!isLoaded && <p>loading...</p>}
-      {isLoaded && (
-        <React.Fragment>
-          {users.map((user) => (
-            <TwitterTweetEmbed tweetId={user.tweetid} />
-          ))}
-        </React.Fragment>
-      )}
+      {isLoaded &&
+        tweetInfo.map((tweet) => {
+          return (
+            <p key={tweet.tweetid}>
+              <b>Tweet ID</b> - {tweet.tweetid} <br></br>
+              <b>Tweet Text</b>- {tweet.text}
+            </p>
+          );
+        })}
+
+      {/* {isLoaded &&
+      //   tweetInfo.map((tweet) => {
+      //     return (
+      //       <TwitterTweetEmbed key={tweet.tweetid} tweetId={tweet.tweetid} />
+      //     );
+      //   })} */}
     </div>
   );
 };

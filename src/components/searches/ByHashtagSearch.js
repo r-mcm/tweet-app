@@ -2,7 +2,7 @@ import store from "../../store.js";
 import Card from "../ui/Card";
 import classes from "./SearchItem.module.css";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 //TODO dispatch the searchTermselector action to the store
 // pass what is entered in the form as a prop to that action

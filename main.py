@@ -21,7 +21,7 @@ class Twitter(Resource):
         tweets_list1 = []
         # Using TwitterSearchScraper to scrape data and append tweets to list
         for i,tweet in enumerate(sntwitter.TwitterSearchScraper(args['query']).get_items()):
-            if i>100:
+            if i>9:
                 break
             tweets_list1.append([tweet.date, tweet.id, tweet.content, tweet.user.username])
         # Creating a dataframe from the tweets list above 
